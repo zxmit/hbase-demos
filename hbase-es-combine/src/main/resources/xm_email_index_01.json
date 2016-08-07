@@ -1,0 +1,159 @@
+//PUT /xm_email_index_02 HTTP/1.1
+//Host: node1:9200
+//Content-Type: application/json
+//Cache-Control: no-cache
+//Postman-Token: efd7e10c-b8d8-b94a-ffbc-0df1737f6b87
+
+{
+  "settings": {
+    "refresh_interval": "5s",
+    "number_of_shards": 20,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "enabled": false
+      }
+    },
+    "resource": {
+      "dynamic": false,
+      "properties": {
+        "DATA_TYPE": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "PROTOCOL_TYPE": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "CAPTURE_TIME": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||yyyyMMddHHmmss||epoch_millis"
+        },
+        "USERNAME": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "PASSWD": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "EMAIL_TYPE": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "SRC_IP": {
+          "type": "ip"
+        },
+        "DST_IP": {
+          "type": "ip"
+        },
+        "SRC_PORT": {
+          "type": "integer"
+        },
+        "DST_PORT": {
+          "type": "integer"
+        },
+        "FROMENV": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "TOENV": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "MAIL_FROM": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "RCPT_TO": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "CC": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "BCC": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "URL": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "SUBJECT": {
+          "type": "string",
+          "store": "no",
+          "term_vector": "with_positions_offsets",
+          "analyzer": "ik",
+          "search_analyzer": "ik"
+        },
+        "SENT_TIME": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||yyyyMMddHHmmss||epoch_millis"
+        },
+        "AFFIXTEXT": {
+          "type": "string",
+          "store": "no",
+          "term_vector": "with_positions_offsets",
+          "analyzer": "ik",
+          "search_analyzer": "ik"
+        },
+        "REMARK": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "AFFIXCOUNT": {
+          "type": "integer"
+        },
+        "CAP_IP": {
+          "type": "ip"
+        },
+        "DATA_ID": {
+          "type": "long"
+        },
+        "PROTO_TYPE": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "AA": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "XX": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "WW": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "YY": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "ISP": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "AREA": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "ORIGINAL": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "CONTENT": {
+          "type": "string",
+          "store": "no",
+          "term_vector": "with_positions_offsets",
+          "analyzer": "ik",
+          "search_analyzer": "ik"
+        }
+      }
+    }
+  }
+}

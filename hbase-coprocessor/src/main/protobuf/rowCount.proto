@@ -1,0 +1,18 @@
+option java_package = "com.zxm.hbase.coprocessor.endpoint.generated";
+option java_outer_classname = "GetRowCountProtos";
+option java_generic_services = true;
+option optimize_for = SPEED;
+
+message getRowCountRequest{
+    required bool reCount = 1;
+}
+
+
+message getRowCountResponse {
+    optional int64 rowCount = 1;
+}
+
+service rowCountService {
+    rpc getRowCount(getRowCountRequest)
+    returns(getRowCountResponse);
+}
